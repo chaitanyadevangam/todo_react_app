@@ -1,43 +1,348 @@
+<!-- index.html -->
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<html>
+  <head style="padding-top: 10px;">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Allura" rel="stylesheet">
+    
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>React App</title>
+
+    <style>
+      @import url('https://fonts.googleapis.com.com/css?family=Poppins:300,400,500,600,700,800,900&display=swap');
+      
+
+  @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,900;1,100;1,300;1,400;1,700&display=swap');
+
+
+  /* CSS */
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+    scroll-behavior: smooth;
+    color: #fff;
+}
+
+body
+{
+    /* background: linear-gradient(#2b1055#7597de); */
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-image: linear-gradient(#c3e4f4 ,#21404f, #217c75,rgb(217, 168, 255));
+    /* background-color: #199883; */
+    
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 10000;
+}
+
+header .logo{
+    color: #fff;
+    font-weight:700;
+    text-decoration: none;
+    font-size: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    display: flex;
+    padding-right: 2cm;
+}
+
+header ul{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+}
+
+header ul li{
+    list-style: none;
+    margin-left: 20px;
+}
+
+header ul li a{
+    text-decoration: none;
+    padding: 6px 15px;
+    color: #fff;
+    border-radius: 20px;
+}
+
+.nav{
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    background: linear-gradient(#1c0522,transparent);
+    width: 100%;
+}
+
+header ul li a:hover ,
+header ul li a.active
+{
+    background: #fff;
+    color: #2b1055;
+}
+
+section{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* padding: 100px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to top,#46d12e,transparent);
+    z-index: 1000;
+} */
+
+section img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+section img#moon
+{
+    mix-blend-mode: screen;
+}
+section img#mountains_front
+{
+    z-index: 10;
+}
+
+#text
+{
+    position: absolute;
+    right: -450px;
+    color: #fff;
+    white-space: nowrap;
+    font-size: 7.5vw;
+    z-index: 9;
+}
+#btn{
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 30px;
+    border-radius: 40px;
+    background: #fff;
+    color: #2b1055;
+    font-size: 1.5em;
+    z-index: 9;
+    transform: translateY(100px);
+    
+}
+
+.sec{
+    position: relative;
+    padding: 100px;
+    /* background: #1c0522; */
+}
+
+.accomplishment{
+    position: relative;
+    padding: 100px;
+    color: #fff;
+}
+
+.sec h2{
+    font-size: 3.5em;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.sec p{
+    font-size: 1.2em;
+    color: #fff;
+}
+.App{
+  margin-top: 10px; 
+    padding: 50px;
+    /* background: green; */
+}
+
+.video{
+    width: 100%;
+}
+
+/* section::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 300px;
+    background: linear-gradient(to top,#1c0522,transparent);
+    z-index: 1000;
+} */
+
+/* body::before
+{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom,#1c0522,transparent); */
+    /* z-index: 1000; */
+/* } */
+
+/* span{
+    font-family: Allura,cursive;
+    font-size: 60px;
+} */
+
+/* STRUCTURING */
+      </style>
+    <title style="font-family: font-family: 'Roboto', sans-serif;">BUCKET IT!</title>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+    <body class="body" id="body">
+        <!-- <section style="background: linear-gradient(to bottom,#1c0522,transparent);display: flex;position: relative;z-index: 1;"> -->
+      <header style="background: linear-gradient(#1c0522, transparent);height: 400px;z-index: 2;">
+        <nav style="display: flex;">
+          <a href="#" class="logo" style="padding-right: 8cm;">BUCKET IT!</a> 
+          <ul style="display: flex;">
+              <li><a href="#" class="active" >HOME</a></li>
+              <li><a href="#sec">ASPIRATION</a></li>
+              <li><a href="#root"">BUCKET LIST</a></li>
+              <li><a href="#accomplishments">ACCOMPLISHMENT STEPS</a></li>
+              <li><a href="#">CONTACT US</a></li>
+          </ul>
+        </nav>
+      </header>
+    <!-- </section> -->
+      <section>
+        <div style="z-index: -1;position: absolute;
+        top: 0;
+        left: 0;z-index: 3;text-stroke:2px black";>
+            <h2 style="-webkit-text-stroke: 1px black; color: white;padding-top: 2cm;text-align: center;font-size: 1.3cm;padding-left: 2cm;padding-right: 10px;opacity: 100%;border-color: #1c0522;text-stroke:2px black"><br>A Goal without a Plan is a Wish. 
+                <br>Stop dreaming about your BucketList and start living it.</h2>
+                <h1 style="-webkit-text-stroke: 1px black; color: white;padding-top: 2cm;text-align: center;font-size: 1.5cm;padding-left: 2cm;padding-right: 10px;opacity: 100%;border-color: #1c0522;text-stroke:2px black;font-weight: 1000;padding-top: 5cm;">MAKE YOUR BIG BUCKET NOW!</h1>
+            <!-- <img src="PngItem_5187785.png" style="z-index: 5;"> -->
+        </div>
+        <video style="display: block;z-index: 0;position: absolute;" class="video" id="mast_inner-2" loop="" autoplay="" muted="" data-lazy-type="video" data-src="https://bucketlist.co.in/wp-content/uploads/Bucketlist-Experience-Video-final-1.mp4" src="https://bucketlist.co.in/wp-content/uploads/Bucketlist-Experience-Video-final-1.mp4">          
+            <source data-lazy-type="video" data-src="https://bucketlist.co.in/wp-content/uploads/Bucketlist-Experience-Video-final-1.mp4" type="video/mp4" src="https://bucketlist.co.in/wp-content/uploads/Bucketlist-Experience-Video-final-1.mp4">
+            <!-- <img src="https://bucketlist.co.in/wp-content/uploads/home-video-screen-mobile.jpg" alt="vid bg"> -->
+            </video>
+      </section>
+      <div>
+        <!-- <img src="depositphotos_72655453-stock-photo-couple-together-arms-up-at.jpg"> -->
+      </div>
+      <div class="sec" id="sec" style="text-align: center;">
+        <br>
+          <h2 style="font-size: 3.5em;padding-left: 1cm;font-family: monospace;">Foster your ASPIRATION</h2>
+          <br>
+          <p style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;font-size: 4ch;text-align: center;">You live only once! So make the most of it.
+            <br>Keep it Up! Sky is the limit...<br>
+            Achieve your dreams</p>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+      </div>
+      <!-- <span>Don<span class="special-char">’</span>t Just tick your BucketList<span class="special-char">,</span> experience it</span> -->
+      <script>
+        //   let stars=document.getElementById('stars');
+        //   let moon=document.getElementById('moon');
+        //   let mountains_behind=document.getElementById('mountains_behind');
+          let text=document.getElementById('text');
+          let btn=document.getElementById('btn');
+        //   let mountains_front=document.getElementById('mountains_front');
+          let header=document.querySelector('header')
+  
+          window.addEventListener('scroll', function(){
+        //       let value=window.scrollY;
+        //       stars.style.left=value*0.25 +'px';
+        //       moon.style.top=value*1.05 +'px';
+        //       mountains_behind.style.top=value*0.05 +'px';
+        //       mountains_front.style.top=value*0 +'px';
+              text.style.marginRight=value*4 +'px';
+              text.style.marginTop=value* 1.5 +'px';
+        //       btn.style.marginTop=value*1.5+'px';
+        //       header.style.top=value*0.5+'px';
+          })
+      </script>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
+      <h2 style="text-align: center; font-family:font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;">Let‘s get those boxes ticked…</h2>
+
+  
+
+    <div id="root" id="root"></div>
+    <script src="https://unpkg.com/react/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script type="text/babel">
+    <div class="bucket" id="bucket">
+      function App() {
+        
+      }
+      ReactDOM.render(<App />, document.getElementById('root'));
+      </div>
+    </script>
+
+    <br>
+    <br>
+    <!-- ACCOMPLISHMENTS -->
+    <section>
+        <div class="accomplishments" id="accomplishments" style="text-align: center;size: 15px;padding-left: 25px;padding-right: 25px;">
+            <h1 style="font-size: 3.5em;">Accomplishment Steps</h1>
+           
+                <ol>
+            Visualize your future which can be new exciting or terrible to think about. </ol><br>
+
+                <ol>Think and plan creatively, probably research on what type of activities or steps u must do to achieve it.</ol><br>
+                
+                
+                <ol>Think about the past obstacles that you have faced while accomplishing your dreams and how you have overcome it .Based on which you can you can overcome your future obstacles for your dreams. 
+            </ol><br>
+                
+                
+            <ol>Use your support system for asking help or seeking that  takes a great deal of vulnerability.</ol>
+                <br>
+                
+                <ol>Manage your time by making a to -do-list which  allows you to potentially set time limits on reoccurring, menial tasks and also  help you find gaps in your schedule to work your dream.
+            </ol><br>
+                
+                Finally, as you’re going through this journey to achieve your dream, think about what sparked that dream to begin with. That is think why and remeber your why for choosing it
+            </ol><br>
+            </li>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <!-- CONTACT -->
+            <div class="accomplishments" id="accomplishments" style="padding-left: 100px; padding-right: 100px; padding-top: 1cm;text-align: center;background: linear-gradient(#2b1055);">
+                <h1 style="font-size: 1em;text-align: center;color: bisque;">CONTACT US</h1>
+                BUCKET IT Pvt Ltd<br>
+                Brigade Road<br>
+                Bangalore<br>
+                8349186478        
+                
+            </div>
+    </section>
   </body>
 </html>
